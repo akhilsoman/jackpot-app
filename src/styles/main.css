@@ -1,0 +1,71 @@
+/* reset css */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+/* reset css */
+
+/* helper classes */
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+/* helper classes */
+
+/* custom styles */
+.game-wrap{
+  margin: 20px auto;
+  max-width: 980px;
+  text-align: center;
+}
+.game-wrap .icon-continer{
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-width: 50%;
+  border: solid 2px #ea1a1a;
+  height: 100px;
+  padding: 10px;
+}
+.game-wrap .icon-continer > img{
+  width: 30%;
+}
+.game-wrap .icon-continer h2.user-alert{
+    font-size: 28px;
+    color: #b1120a;
+    margin: auto;
+    display: block;
+}
+.game-wrap  .control-bar{
+  margin-top: 20px;
+}
+/* custom styles */
