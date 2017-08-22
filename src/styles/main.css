@@ -43,14 +43,15 @@ ol, ul {
 
 /* custom styles */
 .game-wrap{
-  margin: 20px auto;
+  margin:auto;
   max-width: 980px;
   text-align: center;
+	padding: 20px;
 }
 .game-wrap .icon-continer{
   min-width: 50%;
   border: solid 2px #ea1a1a;
-  min-height: 100px;
+  min-height: 200px;
   padding: 10px;
 	display: flex;
 	flex-direction: column;
@@ -65,9 +66,14 @@ ol, ul {
 	border: solid 1px #ccc;
 	margin: 10px;
 	width: 30%;
+	padding: 10px;
+	min-height: 200px;
+	display: flex;
 }
 .game-wrap .icon-continer .image-wrap> div > img{
-	width: 100%;
+	width:100%;
+	margin: auto;
+	display: block;
 }
 .game-wrap .icon-continer h2.user-alert{
     font-size: 28px;
