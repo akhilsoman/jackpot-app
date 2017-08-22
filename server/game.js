@@ -11,7 +11,7 @@ var getResults = function(req,res){
     }else{
       //Logic for bonus
       var date = new Date().getSeconds();
-      var bonus = (date * Math.random() > bonusLimit) ? 1 : 1;
+      var bonus = (date * Math.random() > bonusLimit) ? 1 : 0;
       resultArray.push(bonus);
     }
   }
