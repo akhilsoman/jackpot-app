@@ -2,7 +2,8 @@ var express = require('express');
 var path    = require('path');
 var game    = require('./game');
 
-var port = 5000;
+
+var port = (process.argv.slice(2).length > 0) ? parseInt(process.argv.slice(2)) : 5000 ;
 // setting up express server
 
 var app = express();

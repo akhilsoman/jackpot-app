@@ -1,13 +1,22 @@
 (function(root) {
   var noOfImages = 6;
   var timeDelay = 1000;
+  var bigWinMessage,smallWinMessage,noWinMessage,bonusWinMessage;
   var bonus = false;
   var resultSet = [];
 
-  let init = function() {
+  // init method, setting the config values here
+  let init = function(config) {
+    noOfImages = (config.noOfImages) ? config.noOfImages : 6;
+    timeDelay = (config.timeDelay) ? config.timeDelay :1000;
+    bigWinMessage = (config.bigWinMessage) ? config.bigWinMessage: "Big Win !!!";
+    smallWinMessage = (config.smallWinMessage) ? config.smallWinMessage: "Small Win !!!";
+    noWinMessage = (config.noWinMessage) ? config.noWinMessage: "Bad Luck, Try Again !!!";
+    bonusWinMessage = (config.bonusWinMessage) ? config.bonusWinMessage: "You have a bonus chance !!!";
     updateUserMessage("Click on the below button to start !!");
   };
 
+  // method to update the text messages
   let updateUserMessage = function(message, type) {
     let $el = clearUserMessage(),
       html;
@@ -25,6 +34,7 @@
     $el.innerHTML += html;
   };
 
+  // find the result category and show the appropriate message
   showResults = function(result) {
     count = {}
     result.forEach((item) => {
@@ -36,13 +46,13 @@
 
     switch (prizeCategory) {
       case 3:
-        updateUserMessage("Big Win !!!", "h1")
+        updateUserMessage(bigWinMessage, "h1")
         break;
       case 2:
-        updateUserMessage("Small Win !!!", "h1")
+        updateUserMessage(smallWinMessage, "h1")
         break;
       default:
-        updateUserMessage("Bad Luck, Try Again !!!", "h1");
+        updateUserMessage(noWinMessage , "h1");
         break;
     }
 
@@ -53,13 +63,16 @@
     }
 
   };
+
+  // handle bonus condition
   showBonus = function(){
     document.querySelector('.icon-continer').classList.add('blinker-bg');
-    updateUserMessage("You have a bonus chance !!!", "h1");
+    updateUserMessage(bonusWinMessage, "h1");
     setTimeout(() => {
       document.querySelector('.start-game-button').click();
     },5000)
   }
+
   let clearUserMessage = function() {
     let $el = document.getElementsByClassName('icon-continer')[0];
     if ($el.querySelector('.user-alert')) {
@@ -68,6 +81,7 @@
     return $el;
   };
 
+  // method to add the images , handle promises 
   createElm = function(imgList) {
     let $el = clearUserMessage().getElementsByClassName('image-wrap')[0];
     $el.innerHTML = '';
@@ -129,5 +143,9 @@
 })(this);
 
 window.onload = function() {
-  public.init();
+  public.init({
+    noOfImages : 6,
+    timeDelay : 1500,
+    bigWinMessage : "You have won !!"
+  });
 }
