@@ -1,5 +1,6 @@
 var express = require('express');
 var path    = require('path');
+var game    = require('./game');
 
 var port = 5000;
 // setting up express server
@@ -10,6 +11,8 @@ var app = express();
 
 app.use('/',express.static(path.join(__dirname,'../src')));
 
+//console.log(game.getResults)
+app.get('/api/getResults', game.getResults);
 //starting server
 
 

@@ -48,16 +48,26 @@ ol, ul {
   text-align: center;
 }
 .game-wrap .icon-continer{
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
   min-width: 50%;
   border: solid 2px #ea1a1a;
-  height: 100px;
+  min-height: 100px;
   padding: 10px;
+	display: flex;
+	flex-direction: column;
 }
-.game-wrap .icon-continer > img{
-  width: 30%;
+.game-wrap .icon-continer .image-wrap{
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	margin: 0;
+}
+.game-wrap .icon-continer .image-wrap> div{
+	border: solid 1px #ccc;
+	margin: 10px;
+	width: 30%;
+}
+.game-wrap .icon-continer .image-wrap> div > img{
+	width: 100%;
 }
 .game-wrap .icon-continer h2.user-alert{
     font-size: 28px;
@@ -65,7 +75,63 @@ ol, ul {
     margin: auto;
     display: block;
 }
+.game-wrap .icon-continer h1.user-success-alert{
+	-webkit-animation: blinker 2s infinite;  /* Safari 4+ */
+	-moz-animation: blinker 2s infinite;  /* Fx 5+ */
+	-o-animation: blinker 2s infinite;  /* Opera 12+ */
+	animation: blinker 2s infinite;  /* IE 10+, Fx 29+ */
+	font-size: 34px;
+	font-weight: bold;
+	color: #40fb11;
+}
 .game-wrap  .control-bar{
   margin-top: 20px;
 }
+.game-wrap  .control-bar .start-game-button{
+	background: url('../assets/button.png') no-repeat;
+	width: 100px;
+	height: 100px;
+	border: none;
+	opacity: 1;
+}
+.game-wrap  .control-bar .start-game-button[disabled]{
+	opacity: 0.5;
+}
+.blinker-bg {
+  -webkit-animation: blinkerbg 3s infinite;  /* Safari 4+ */
+  -moz-animation: blinkerbg 3s infinite;  /* Fx 5+ */
+  -o-animation: blinkerbg 3s infinite;  /* Opera 12+ */
+  animation: blinkerbg 3s infinite;  /* IE 10+, Fx 29+ */
+}
+
 /* custom styles */
+
+/* animations */
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+@-webkit-keyframes blinkerbg {
+  0%, 24% {
+		background: #070000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #070000, #4C0001, #070000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #070000, #4C0001, #070000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+	25%,49%{
+		background: #070000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #070000, #4C0001, #070000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #070000, #4C0001, #070000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	}
+  50%, 74% {
+		background: #070000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #070000, #4c0001, #070000); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #070000, #4c0001, #070000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+	75%,100%{
+		background: #070000;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to top, #070000, #4C0001, #070000);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to top, #070000, #4C0001, #070000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+}
+/* animations */
