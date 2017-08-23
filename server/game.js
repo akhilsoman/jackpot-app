@@ -10,7 +10,7 @@ var getResults = function(req,res){
        resultArray.push(Math.floor(Math.random() * noOfImages));
     }else{
       //Logic for bonus
-      //var date = new Date().getSeconds();
+      // bonus will be given last item in the response array is truthy 
       var bonus = (100 * Math.random() > bonusLimit) ? 1 : 0;
       resultArray.push(bonus);
     }

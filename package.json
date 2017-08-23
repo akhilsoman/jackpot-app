@@ -10,7 +10,9 @@
     "start": "node server/app.js"
   },
   "dependencies": {
-    "express": "^4.15.4",
-    "lodash": "^4.11.2"
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "jasmine": "^2.7.0"
   }
 }
