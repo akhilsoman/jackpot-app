@@ -129,7 +129,7 @@ JackPot.prototype.getResults = function(callback,error) {
       }
     }
   }
-  req.open("GET", '/api/getResults', true);
+  req.open("GET", apiEndpoints.getResults, true);
   req.send(null);
 };
 
