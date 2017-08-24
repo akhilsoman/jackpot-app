@@ -28,7 +28,7 @@ JackPot.prototype.updateUserMessage = function(message, type) {
 
 // find the result category and show the appropriate message
 JackPot.prototype.showResults = function(result) {
-  count = {}
+  let count = {}
   result.forEach((item) => {
     count[item] = (count[item] || 0) + 1;
   });
@@ -139,7 +139,7 @@ JackPot.prototype.showError = function() {
 };
 
 // init method, setting the config values here
-init = function(config) {
+this.init = function(config) {
   var jackpot = new JackPot(config);
   jackpot.updateUserMessage("Click on the below button to start !!");
 
